@@ -130,7 +130,6 @@ var DatabaseRepository = /** @class */ (function () {
                             }];
                     case 4:
                         e_2 = _a.sent();
-                        console.log(e_2);
                         return [2 /*return*/, {
                                 success: false,
                                 message: e_2,
@@ -177,7 +176,6 @@ var DatabaseRepository = /** @class */ (function () {
                             }];
                     case 6:
                         e_3 = _a.sent();
-                        console.log('Error getting thumbnail' + e_3);
                         return [2 /*return*/, {
                                 success: false,
                                 message: e_3,
