@@ -1,0 +1,14 @@
+"use strict";
+Object.defineProperty(exports, "__esModule", { value: true });
+var express = require("express");
+var UpdateController_1 = require("./controller/UpdateController");
+var UploadController_1 = require("./controller/UploadController");
+var ResultsController_1 = require("./controller/ResultsController");
+var multer = require('multer');
+var app = express();
+var storageAccess = multer.memoryStorage();
+var upload = multer({ storage: storageAccess });
+app.put('/upload/:id', upload.single('image'), (0, UpdateController_1.UpdateController)());
+app.post('/upload', upload.single('image'), (0, UploadController_1.UploadController)());
+app.get('/allResults/:start/:end', (0, ResultsController_1.ResultsController)());
+app.listen(8080, '0.0.0.0');
